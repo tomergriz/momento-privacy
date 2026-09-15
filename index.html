@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>מדיניות הפרטיות של Momento</title>
+<style>
+  :root {
+    --bg: hsl(30 20% 97%);
+    --surface: hsl(30 25% 100%);
+    --border: hsl(30 15% 88%);
+    --text: hsl(20 15% 15%);
+    --text-muted: hsl(20 10% 40%);
+    --accent: hsl(25 78% 46%);
+    --accent-soft: hsl(25 78% 46% / 0.08);
+    --accent-soft-border: hsl(25 78% 46% / 0.25);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: hsl(240 5% 7%);
+      --surface: hsl(240 6% 13%);
+      --border: hsl(240 6% 22%);
+      --text: hsl(30 10% 92%);
+      --text-muted: hsl(240 5% 65%);
+      --accent: hsl(25 80% 65%);
+      --accent-soft: hsl(25 80% 65% / 0.12);
+      --accent-soft-border: hsl(25 80% 65% / 0.3);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans Hebrew", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.75rem 6rem;
+  }
+
+  header.doc-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .brand-mark {
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-soft-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .brand-mark svg { width: 0.95rem; height: 0.95rem; fill: var(--accent); }
+
+  .brand-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 4vw, 2.15rem);
+    font-weight: 700;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 62ch;
+    margin: 0.5rem 0 0;
+  }
+
+  section.block {
+    margin-bottom: 2.5rem;
+  }
+
+  section.block:last-of-type { margin-bottom: 0; }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.9rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+  }
+
+  h2 .num {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  p { margin: 0 0 0.85rem; max-width: 66ch; }
+  p:last-child { margin-bottom: 0; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.85rem;
+    padding: 1.35rem 1.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  table caption {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    caption-side: top;
+  }
+
+  th, td {
+    text-align: right;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  thead th {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    border-bottom-width: 1px;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  .table-wrap { overflow-x: auto; }
+
+  ul.plain {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ul.plain li {
+    padding-inline-start: 1.1rem;
+    position: relative;
+  }
+
+  ul.plain li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+
+  ol.steps {
+    margin: 0;
+    padding-inline-start: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ol.steps li {
+    padding-inline-start: 0.3rem;
+  }
+
+  ol.steps li::marker {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .deletion-scope {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    align-items: baseline;
+  }
+
+  .contact a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft-border);
+  }
+  .contact a:hover { border-bottom-color: var(--accent); }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 520px) {
+    .page { padding: 2.75rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="doc-head">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.1 2.1 4.5 5.6 4c2.1-.3 4 .8 5 2.4C11.6 4.8 13.5 3.7 15.6 4c3.5.5 5.2 4.1 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg>
+      </span>
+      <span class="brand-name">Momento</span>
+    </div>
+    <h1>מדיניות פרטיות</h1>
+    <div class="meta">
+      <span>עודכן לאחרונה: 15 בספטמבר 2026</span>
+      <span>חל על: אפליקציית Momento לאנדרואיד</span>
+    </div>
+    <p class="lede">
+      Momento היא אפליקציה שעוזרת לצמצם זמן גלילה ברשתות חברתיות באמצעות מערכת אסימוני זמן.
+      המסמך הזה מסביר בשפה פשוטה אילו נתונים נאספים, לשם מה, ועם מי הם משותפים.
+    </p>
+  </header>
+
+  <section class="block">
+    <h2><span class="num">01</span> אילו נתונים נאספים</h2>
+    <div class="card table-wrap">
+      <table>
+        <caption>נתונים שנשמרים בחשבון המשתמש</caption>
+        <thead>
+          <tr><th>סוג הנתון</th><th>לשם מה</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>כתובת אימייל, שם, סיסמה מוצפנת</td><td>יצירת חשבון והתחברות לאפליקציה</td></tr>
+          <tr><td>אירועי שימוש (התחלת סשן, שימוש באסימון, סיום גלישה)</td><td>הפעלת מערכת האסימונים והצגת סיכומים אישיים</td></tr>
+          <tr><td>Token מכשיר להתראות (Push)</td><td>שליחת תזכורות ועדכונים לאפליקציה</td></tr>
+          <tr><td>סוג מכשיר ומערכת הפעלה</td><td>תמיכה טכנית ושיפור התאמת האפליקציה</td></tr>
+          <tr><td>אירועי שימוש אנונימיים באפליקציה (למשל פתיחת אפליקציה, שלבי אונבורדינג, לחיצות על כפתורים עיקריים)</td><td>הבנת דפוסי שימוש כלליים ושיפור האפליקציה, באמצעות Firebase Analytics — אינם כוללים שם, כתובת אימייל או תוכן מסך</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">02</span> הרשאות מיוחדות באנדרואיד</h2>
+    <p>Momento מבקשת שתי הרשאות רגישות שנדרשות כדי שהחסימה בפועל תעבוד, ומשתמשת בהן אך ורק למטרה המתוארת:</p>
+    <div class="card">
+      <ul class="plain">
+        <li><strong>שירות נגישות (Accessibility Service):</strong> משמש כדי לזהות מתי נפתחת אחת מהאפליקציות שהמשתמש בחר לחסום (כגון אינסטגרם או טיקטוק), ולהחזיר אותו למסך ההשהיה של Momento בתום הזמן שהוקצה. השירות <strong>אינו קורא, מתעד או מנתח את תוכן המסך</strong> באף אפליקציה אחרת — הוא בודק רק איזו אפליקציה פתוחה כרגע.</li>
+        <li><strong>הצגה מעל אפליקציות אחרות:</strong> משמשת להצגת בועת הטיימר הצפה מעל האפליקציה החסומה, כדי שהמשתמש יראה כמה זמן נותר.</li>
+        <li><strong>נתוני שימוש במכשיר (Usage Access) — אופציונלי:</strong> אם המשתמש בוחר להפעיל את ההשוואה היומית, האפליקציה קוראת כמה זמן נעשה שימוש באפליקציות רשתות חברתיות נתמכות, לצורך הצגת השוואה אישית. הנתון הזה נשאר על המכשיר ואינו נשלח לשרת.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">03</span> עם מי הנתונים משותפים</h2>
+    <p>הנתונים אינם נמכרים ואינם משותפים למטרות פרסום. הם מעובדים על ידי הספקים הבאים, אך ורק כדי להפעיל את השירות:</p>
+    <div class="card">
+      <ul class="plain">
+        <li><strong>Supabase:</strong> אחסון בסיס הנתונים (חשבון משתמש, אירועי שימוש, Token להתראות) — כל הנתונים נשמרים אך ורק בבסיס נתונים מאובטח עם הרשאות גישה מוגבלות, ואינם משותפים עם גיליונות אלקטרוניים או כלים חיצוניים נוספים.</li>
+        <li><strong>Firebase Analytics (Google):</strong> מקבל אירועי שימוש אנונימיים באפליקציה (למשל פתיחת אפליקציה, השלמת שלבים באונבורדינג, לחיצה על כפתורים עיקריים) לצורך ניתוח דפוסי שימוש כלליים ושיפור האפליקציה. אינו מקבל שם, כתובת אימייל, סיסמה או תוכן מסך, והנתונים אינם משמשים לפרסום.</li>
+        <li><strong>Pexels:</strong> ספריית וידאו חיצונית המספקת סרטוני טבע מרגיעים במסך ה"נחיתה הרכה" בסיום סשן — אינה מקבלת נתונים מזהים על המשתמש.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">04</span> שמירה ומחיקת נתונים</h2>
+    <p>הנתונים נשמרים כל עוד החשבון באפליקציית Momento פעיל. כדי לבקש מחיקת חשבון וכל הנתונים המשויכים אליו:</p>
+    <div class="card">
+      <ol class="steps">
+        <li>יש לשלוח אימייל לכתובת <a href="mailto:tomergrizz@gmail.com">tomergrizz@gmail.com</a> מכתובת הדוא"ל הרשומה בחשבון, עם הנושא "בקשה למחיקת חשבון Momento".</li>
+        <li>הבקשה תטופל תוך עד 14 ימי עסקים, ותישלח הודעת אישור בדוא"ל כשהמחיקה הושלמה.</li>
+      </ol>
+      <p class="deletion-scope">
+        עם אישור הבקשה יימחקו לצמיתות: כתובת האימייל, השם, הסיסמה (המוצפנת), כל אירועי השימוש וה-Token להתראות המשויכים לחשבון. אין תקופת שמירה נוספת מעבר לזמן הדרוש לטיפול בבקשה עצמה.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">05</span> אבטחה</h2>
+    <p>
+      תקשורת בין האפליקציה לשרתים מוצפנת (HTTPS), וסיסמאות המשתמשים נשמרות כערך מוצפן (hash) ולא כטקסט גלוי.
+      הגישה לבסיס הנתונים מוגבלת באמצעות מדיניות הרשאות ברמת השורה (Row Level Security).
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">06</span> שינויים במדיניות זו</h2>
+    <p>
+      אם מדיניות הפרטיות תעודכן באופן מהותי, תאריך העדכון בראש המסמך ישונה בהתאם.
+      מומלץ לחזור ולעיין בדף מדי פעם.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">07</span> יצירת קשר</h2>
+    <div class="card contact">
+      <span>לשאלות, בקשות מחיקה או פניות בנושא פרטיות:</span>
+      <a href="mailto:tomergrizz@gmail.com">tomergrizz@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    מסמך זה מתאר את המדיניות הנוכחית של אפליקציית Momento. אין במסמך זה כדי להוות ייעוץ משפטי.
+  </footer>
+</div>
+</body>
+</html>
