@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Lesso Terms of Use</title>
+<style>
+  :root {
+    --bg: hsl(30 20% 97%);
+    --surface: hsl(30 25% 100%);
+    --border: hsl(30 15% 88%);
+    --text: hsl(20 15% 15%);
+    --text-muted: hsl(20 10% 40%);
+    --accent: hsl(25 78% 46%);
+    --accent-soft: hsl(25 78% 46% / 0.08);
+    --accent-soft-border: hsl(25 78% 46% / 0.25);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: hsl(240 5% 7%);
+      --surface: hsl(240 6% 13%);
+      --border: hsl(240 6% 22%);
+      --text: hsl(30 10% 92%);
+      --text-muted: hsl(240 5% 65%);
+      --accent: hsl(25 80% 65%);
+      --accent-soft: hsl(25 80% 65% / 0.12);
+      --accent-soft-border: hsl(25 80% 65% / 0.3);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 4rem 1.75rem 6rem;
+  }
+
+  header.doc-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .brand-mark {
+    width: 1.85rem;
+    height: 1.85rem;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-soft-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .brand-mark svg { width: 0.95rem; height: 0.95rem; fill: var(--accent); }
+
+  .brand-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  h1 {
+    font-size: clamp(1.7rem, 4vw, 2.15rem);
+    font-weight: 700;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 62ch;
+    margin: 0.5rem 0 0;
+  }
+
+  section.block {
+    margin-bottom: 2.5rem;
+  }
+
+  section.block:last-of-type { margin-bottom: 0; }
+
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.9rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+  }
+
+  h2 .num {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  p { margin: 0 0 0.85rem; max-width: 66ch; }
+  p:last-child { margin-bottom: 0; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.85rem;
+    padding: 1.35rem 1.5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+  }
+
+  table caption {
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+    caption-side: top;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  thead th {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    border-bottom-width: 1px;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  .table-wrap { overflow-x: auto; }
+
+  ul.plain {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ul.plain li {
+    padding-inline-start: 1.1rem;
+    position: relative;
+  }
+
+  ul.plain li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0.65em;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+
+  ol.steps {
+    margin: 0;
+    padding-inline-start: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  ol.steps li {
+    padding-inline-start: 0.3rem;
+  }
+
+  ol.steps li::marker {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .deletion-scope {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+    color: var(--text-muted);
+  }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    align-items: baseline;
+  }
+
+  .meta a { color: var(--accent); text-decoration: none; }
+
+  .contact a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft-border);
+  }
+  .contact a:hover { border-bottom-color: var(--accent); }
+
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 520px) {
+    .page { padding: 2.75rem 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="doc-head">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.1 2.1 4.5 5.6 4c2.1-.3 4 .8 5 2.4C11.6 4.8 13.5 3.7 15.6 4c3.5.5 5.2 4.1 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg>
+      </span>
+      <span class="brand-name">Lesso</span>
+    </div>
+    <h1>Terms of Use</h1>
+    <div class="meta">
+      <span>Last updated: November 2, 2026</span>
+      <span>Applies to: the Lesso app</span>
+      <a href="/en">Privacy Policy</a>
+    </div>
+    <p class="lede">
+      These terms apply to your use of the Lesso app. By signing up for or using the app, you agree to them.
+      If you do not agree, please do not use the app.
+    </p>
+  </header>
+
+  <section class="block">
+    <h2><span class="num">01</span> Who we are</h2>
+    <p>
+      Lesso is developed and operated by Tomer Grizitzky, doing business as Better Life IO (the "Developer").
+      Wherever these terms say "we", they mean the Developer.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">02</span> The service</h2>
+    <p>
+      Lesso is a self-management tool for scrolling time on social media, using time tokens, pause screens and blocking of apps you choose.
+      It is a helper tool only, and not a medical, psychological or therapeutic service. We do not promise any particular result from using it.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">03</span> Your account</h2>
+    <div class="card">
+      <ul class="plain">
+        <li>Provide accurate details when signing up, and keep access to your account and its email address secure.</li>
+        <li>Your account is personal and may not be transferred to others.</li>
+        <li>You may stop using the app at any time and ask for your account to be deleted, as described in the Privacy Policy.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">04</span> Intellectual property: all rights reserved</h2>
+    <p>
+      The app and everything in it, including its software code, design, user interface, texts, graphics, animations, the structure of its token system,
+      and the name Lesso and its logo, are the property of the Developer and are protected by copyright and intellectual property laws. All rights reserved.
+    </p>
+    <p>
+      We grant you a personal, limited, non-exclusive and non-transferable license to use the app for your own personal use, in line with these terms.
+      This license does not transfer any ownership to you.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">05</span> Prohibited uses</h2>
+    <p>You may not, yourself or through others:</p>
+    <div class="card">
+      <ul class="plain">
+        <li>Copy, reproduce, modify, distribute, sell or rent the app or any part of it.</li>
+        <li>Reverse engineer, decompile or attempt to extract the source code, except to the extent the law expressly allows it.</li>
+        <li>Use the app's design, texts, structure or content to develop a competing or similar product.</li>
+        <li>Access the app's servers by automated means, bypass security measures or disrupt the service.</li>
+        <li>Use the app for any unlawful purpose.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">06</span> Third-party content</h2>
+    <p>
+      The nature videos on the pause screens are provided by Pexels and belong to their creators. Names and logos of social networks and other apps
+      shown in Lesso belong to their owners and are shown only to identify them.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">07</span> Feedback</h2>
+    <p>
+      Feedback, suggestions and ideas you send us may be used to improve the app, without any obligation or payment.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">08</span> Availability and changes</h2>
+    <p>
+      The app is provided "as is". We work to keep it running properly, but we do not guarantee that it will always work, on every device, without faults.
+      For example, the operating system may stop the blocking service. We may change, suspend or discontinue features or the whole service.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">09</span> Limitation of liability</h2>
+    <p>
+      To the fullest extent permitted by law, the Developer is not liable for indirect or consequential damage arising from using or being unable to use the app,
+      including messages or content not seen during a block. Lesso blocks only the apps you choose, and should not be relied on in emergencies.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">10</span> Ending use</h2>
+    <p>
+      We may suspend or block an account used in breach of these terms. The sections on intellectual property and limitation of liability
+      continue to apply after use ends.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">11</span> Privacy</h2>
+    <p>
+      How we collect and use data is described in the <a href="/en" style="color: var(--accent);">Privacy Policy</a>, which forms part of these terms.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">12</span> Changes to these terms</h2>
+    <p>
+      We may update these terms from time to time. The date at the top will change accordingly, and continuing to use the app after an update means you accept the updated terms.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">13</span> Governing law and jurisdiction</h2>
+    <p>
+      These terms are governed solely by the laws of the State of Israel. The competent courts in the Tel Aviv-Jaffa district have exclusive jurisdiction over any matter relating to them.
+    </p>
+  </section>
+
+  <section class="block">
+    <h2><span class="num">14</span> Contact</h2>
+    <div class="card contact">
+      <span>Questions about these terms:</span>
+      <a href="mailto:lessoapp@gmail.com">lessoapp@gmail.com</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Better Life IO. All rights reserved.
+  </footer>
+</div>
+</body>
+</html>
