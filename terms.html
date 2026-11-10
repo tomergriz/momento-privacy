@@ -56,6 +56,13 @@
     border-bottom: 1px solid var(--border);
   }
 
+  .top-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .top-row .brand { margin-bottom: 0; }
+  a.brand { text-decoration: none; color: inherit; }
+  a.brand:hover .brand-mark { transform: scale(1.08); }
+  .brand-mark { transition: transform .2s; }
+  .back-home { font-size: .9rem; color: var(--text-muted); text-decoration: none; white-space: nowrap; }
+  .back-home:hover { color: var(--accent); }
   .brand {
     display: flex;
     align-items: center;
@@ -257,11 +264,14 @@
 <body>
 <div class="page">
   <header class="doc-head">
-    <div class="brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.1 2.1 4.5 5.6 4c2.1-.3 4 .8 5 2.4C11.6 4.8 13.5 3.7 15.6 4c3.5.5 5.2 4.1 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg>
-      </span>
-      <span class="brand-name">Lesso</span>
+    <div class="top-row">
+      <a class="brand" href="https://www.lessoapp.com/" aria-label="Lesso home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.1 2.1 4.5 5.6 4c2.1-.3 4 .8 5 2.4C11.6 4.8 13.5 3.7 15.6 4c3.5.5 5.2 4.1 3.6 7.7C21.5 16.4 12 21 12 21z"/></svg>
+        </span>
+        <span class="brand-name">Lesso</span>
+      </a>
+      <a class="back-home" href="https://www.lessoapp.com/">→ חזרה לאתר</a>
     </div>
     <h1>תנאי שימוש</h1>
     <div class="meta">
